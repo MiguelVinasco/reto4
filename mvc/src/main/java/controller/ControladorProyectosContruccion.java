@@ -24,5 +24,11 @@ public class ControladorProyectosContruccion {
 
     }
 
+    public Lider encontrarLider(Integer idLider)throws SQLException {
+
+        return this.liderDao.consultarLiderID(idLider);
+
+    }
+
     
 }
