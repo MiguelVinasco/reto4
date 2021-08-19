@@ -1,0 +1,76 @@
+package view;
+
+import controller.ControladorProyectosContruccion;
+import java.util.Scanner;
+import model.vo.Lider;
+import java.util.ArrayList;
+
+public class MenuLider {
+
+    //Atributo- Controlador
+
+    public static final ControladorProyectosContruccion controlador = new ControladorProyectosContruccion();
+
+
+    public static void menuInicial(){
+
+        boolean mainloop = true;
+        Scanner lector = new Scanner(System.in);
+
+        do {
+
+            System.out.println("Menu Lideres");
+            System.out.println("1.Listar todos los Lideres de proyectos");
+            System.out.println("2.Consultar lider por ID");
+            System.out.println("3. Salir");
+
+            System.out.println("Ingrese la opcion: ");
+
+            int opcionIngresada = lector.nextInt();
+
+            if (opcionIngresada == 1) {
+
+                listar();
+
+            }else if (opcionIngresada == 2) {
+
+                System.out.println("En construccion");
+                
+
+            }else if (opcionIngresada ==3){
+
+                System.out.println("Salida exitosa");
+                mainloop = false;
+
+            }else{
+                System.out.println("opcion invalida");
+            }
+
+            
+        } while (mainloop);
+
+    }
+
+    public static void listar(){
+
+        try {
+
+            ArrayList<Lider> Lideres = controlador.consultarTodosLideres();
+
+            System.out.println("ID_Lider Nombre Primero_Apellido Segundo_Apellido Salario Clasificacion");
+
+            for (Lider lider : Lideres) {
+                
+                System.out.printf("%d %s %s %s %d %d %n",
+                lider.getIdLider(), lider.getNombre(), lider.getPrimerApellido(),lider.getSegundoApellido(), lider.getSalario(), Math.round(lider.getClasificacion())
+                );
+            }
+            
+        } catch (Exception e) {
+            //TODO: handle exception
+            System.err.println("Error consultando todos los lideres" + e.getMessage());
+        }
+
+    }
+    
+}
