@@ -8,6 +8,10 @@ import model.vo.MaterialNacional;
 import model.dao.ProyectoRankeadoComprasDao;
 import model.vo.ProyectoRankeadoCompras;
 
+//tercer modelo
+import model.dao.CargoAsignacionDao;
+import model.vo.CargoAsignacion;
+
 
 import java.util.ArrayList;
 import java.sql.SQLException;
@@ -20,11 +24,15 @@ public class ControladorRequerimientoReto4 {
 
     private final ProyectoRankeadoComprasDao ProyectoRankeadoComprasDao;
 
+    private final CargoAsignacionDao CargoAsignacionDao;
+
     public ControladorRequerimientoReto4(){
 
         this.MaterialNacionalDao = new MaterialNacionalDao();
 
         this.ProyectoRankeadoComprasDao = new ProyectoRankeadoComprasDao();
+
+        this.CargoAsignacionDao = new CargoAsignacionDao();
 
         
     }
@@ -38,9 +46,8 @@ public class ControladorRequerimientoReto4 {
         return this.ProyectoRankeadoComprasDao.topProyectosComprasGranito();
     }
 
-    // public ArrayList<CargoAsignacion> consultarCargosMenosAsignados() throws SQLException {
-    //     //.
-    //     //.
-    //     //.
-    // }
+    public ArrayList<CargoAsignacion> consultarCargosMenosAsignados() throws SQLException {
+    
+        return this.CargoAsignacionDao.cargosMenosAsignados();
+    }
 }

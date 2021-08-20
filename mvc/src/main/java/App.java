@@ -44,9 +44,9 @@ public class App
             VistaRequerimientosReto4.requerimiento4();
             System.out.println();
 
-            // //Requerimiento 5 - Reto3
-            // VistaRequerimientosReto4.requerimiento5();
-            // System.out.println();
+            //Requerimiento 5 - Reto3
+            VistaRequerimientosReto4.requerimiento5();
+            System.out.println();
     }
 }
 
