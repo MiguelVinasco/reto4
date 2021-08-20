@@ -1,105 +1,105 @@
-package view;
+// package view;
 
-import controller.ControladorProyectosContruccion;
-import java.util.Scanner;
-import model.vo.Lider;
-import java.util.ArrayList;
+// import controller.ControladorProyectosContruccion;
+// import java.util.Scanner;
+// import model.vo.Lider;
+// import java.util.ArrayList;
 
-public class MenuLider {
+// public class MenuLider {
 
-    //Atributo- Controlador
+//     //Atributo- Controlador
 
-    public static final ControladorProyectosContruccion controlador = new ControladorProyectosContruccion();
+//     public static final ControladorProyectosContruccion controlador = new ControladorProyectosContruccion();
 
 
-    public static void menuInicial(){
+//     public static void menuInicial(){
 
-        boolean mainloop = true;
-        Scanner lector = new Scanner(System.in);
+//         boolean mainloop = true;
+//         Scanner lector = new Scanner(System.in);
 
-        do {
+//         do {
 
-            System.out.println("Menu Lideres");
-            System.out.println("1.Listar todos los Lideres de proyectos");
-            System.out.println("2.Consultar lider por ID");
-            System.out.println("3. Salir");
+//             System.out.println("Menu Lideres");
+//             System.out.println("1.Listar todos los Lideres de proyectos");
+//             System.out.println("2.Consultar lider por ID");
+//             System.out.println("3. Salir");
 
-            System.out.println("Ingrese la opcion: ");
+//             System.out.println("Ingrese la opcion: ");
 
-            int opcionIngresada = lector.nextInt();
+//             int opcionIngresada = lector.nextInt();
 
-            if (opcionIngresada == 1) {
+//             if (opcionIngresada == 1) {
 
-                listar();
+//                 listar();
 
-            }else if (opcionIngresada == 2) {
+//             }else if (opcionIngresada == 2) {
 
-                consultar();
+//                 consultar();
                 
 
-            }else if (opcionIngresada ==3){
+//             }else if (opcionIngresada ==3){
 
-                System.out.println("Salida exitosa");
-                mainloop = false;
+//                 System.out.println("Salida exitosa");
+//                 mainloop = false;
 
-            }else{
-                System.out.println("opcion invalida");
-            }
+//             }else{
+//                 System.out.println("opcion invalida");
+//             }
 
             
-        } while (mainloop);
+//         } while (mainloop);
 
-    }
+//     }
 
-    public static void listar(){
+//     public static void listar(){
 
-        try {
+//         try {
 
-            ArrayList<Lider> Lideres = controlador.consultarTodosLideres();
+//             ArrayList<Lider> Lideres = controlador.consultarTodosLideres();
 
-            System.out.println("ID_Lider Nombre Primero_Apellido Segundo_Apellido Salario Clasificacion");
+//             System.out.println("ID_Lider Nombre Primero_Apellido Segundo_Apellido Salario Clasificacion");
 
-            for (Lider lider : Lideres) {
+//             for (Lider lider : Lideres) {
                 
-                System.out.printf("%d %s %s %s %d %d %n",
-                lider.getIdLider(), lider.getNombre(), lider.getPrimerApellido(),lider.getSegundoApellido(), lider.getSalario(), Math.round(lider.getClasificacion())
-                );
-            }
+//                 System.out.printf("%d %s %s %s %d %d %n",
+//                 lider.getIdLider(), lider.getNombre(), lider.getPrimerApellido(),lider.getSegundoApellido(), lider.getSalario(), Math.round(lider.getClasificacion())
+//                 );
+//             }
             
-        } catch (Exception e) {
-            //TODO: handle exception
-            System.err.println("Error consultando todos los lideres" + e.getMessage());
-        }
+//         } catch (Exception e) {
+
+//             System.err.println("Error consultando todos los lideres" + e.getMessage());
+//         }
 
     
-    }
-    public static void consultar(){
+//     }
+//     public static void consultar(){
 
-        System.out.println("Consultar lider ID");
-        Scanner lector = new Scanner(System.in);
-        System.out.println("ingrese el id del lider");
-        Integer idLider = lector.nextInt();
+//         System.out.println("Consultar lider ID");
+//         Scanner lector = new Scanner(System.in);
+//         System.out.println("ingrese el id del lider");
+//         Integer idLider = lector.nextInt();
 
-        try {
+//         try {
 
-           Lider lider = controlador.encontrarLider(idLider);
+//            Lider lider = controlador.encontrarLider(idLider);
 
-           if (lider != null){
-            System.out.println("ID_Lider Nombre Primero_Apellido Segundo_Apellido Salario Clasificacion");
-            System.out.printf("%d %s %s %s %d %d %n",
-            lider.getIdLider(), lider.getNombre(), lider.getPrimerApellido(),lider.getSegundoApellido(), lider.getSalario(), Math.round(lider.getClasificacion())
-                );
+//            if (lider != null){
+//             System.out.println("ID_Lider Nombre Primero_Apellido Segundo_Apellido Salario Clasificacion");
+//             System.out.printf("%d %s %s %s %d %d %n",
+//             lider.getIdLider(), lider.getNombre(), lider.getPrimerApellido(),lider.getSegundoApellido(), lider.getSalario(), Math.round(lider.getClasificacion())
+//                 );
 
-           }else{
-               System.out.println("el lider con id "+ idLider + " no fue encontrado");
-           }
+//            }else{
+//                System.out.println("el lider con id "+ idLider + " no fue encontrado");
+//            }
         
             
-        } catch (Exception e) {
-            //TODO: handle exception
-            System.err.println("Error consultando el lider " + e.getMessage());
-        }
+//         } catch (Exception e) {
 
-    }
+//             System.err.println("Error consultando el lider " + e.getMessage());
+//         }
+
+//     }
     
-}
+// }

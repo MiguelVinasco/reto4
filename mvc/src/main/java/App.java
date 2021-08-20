@@ -6,7 +6,7 @@ import java.sql.Connection; //establecer conexiones
 import java.sql.SQLException; //manejador de exepciones
 
 //importamos elemento de la vista
-import view.MenuLider;
+import view.VistaRequerimientosReto4;
 /**
  * Hello world!
  *
@@ -17,7 +17,8 @@ public class App
     {
 
         //iniciar el mainlopp del menu de la aplicacion
-        MenuLider.menuInicial();
+        
+
         ///try (Connection conexion = JDBCUtilities.getConnection()){;
     
         //    if (JDBCUtilities.estaVacia()){
@@ -35,6 +36,17 @@ public class App
         //    System.err.println("no se pudo conectar a la base de datos conexion errada "+ e.getMessage());
         //}
 
+             //Requerimiento 3 - Reto3
+            VistaRequerimientosReto4.requerimiento3();
+            System.out.println();
+
+            //Requerimiento 4 - Reto3
+            VistaRequerimientosReto4.requerimiento4();
+            System.out.println();
+
+            // //Requerimiento 5 - Reto3
+            // VistaRequerimientosReto4.requerimiento5();
+            // System.out.println();
     }
 }
 
